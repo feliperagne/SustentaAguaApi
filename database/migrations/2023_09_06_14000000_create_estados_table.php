@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('estados', function (Blueprint $table) {
             $table->id();
             $table->string('nome')->unique();
-            $table->decimal('num_habitante');
+            $table->integer('num_habitante');
+            $table->decimal('consumo_medio');
+            $table->timestamps();
         });
     }
 

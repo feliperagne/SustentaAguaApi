@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EstadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ Route::post('logout',[LoginController::class, 'logout']);
 Route::get('checarLogin', [LoginController::class, 'checarLogin']);
 
 Route::resources([
-    'user' => UserController::class
+    'user' => UserController::class,
+    'estados' => EstadoController::class,
 ]);
 
 /*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

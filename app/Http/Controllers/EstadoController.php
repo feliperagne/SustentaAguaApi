@@ -14,54 +14,24 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        //
+        $estado = Estado::select('id', 'nome')->get();
+
+        return [
+            "status" => true,
+            'data' => $estado
+        ];
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreEstadoRequest $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
      */
     public function show(Estado $estado)
     {
-        //
+        return [
+            "status" => true,
+            "data" => $estado
+        ];
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Estado $estado)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateEstadoRequest $request, Estado $estado)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Estado $estado)
-    {
-        //
-    }
 }

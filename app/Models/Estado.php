@@ -12,11 +12,12 @@ class Estado extends Model
 
     protected $fillable = [
         'nome',
-        'num_habitante'
+        'num_habitante',
+        'consumo_medio'
     ];
 
-
-
-
-
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }
