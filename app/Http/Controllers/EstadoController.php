@@ -22,6 +22,26 @@ class EstadoController extends Controller
         ];
     }
 
+    public function listarPopulacaoEConsumo($id)
+    {
+        $estado = Estado::find($id);
+    
+        if (!$estado) {
+            return [
+                'status' => false,
+                'message' => 'Estado não encontrado.',
+            ];
+        }
+    
+        return [
+            'status' => true,
+            'data' => [
+                'populacao' => $estado->num_habitante, 
+                'consumoMedio' => $estado->consumo_medio, 
+            ],
+        ];
+    }
+    
 
     /**
      * Display the specified resource.

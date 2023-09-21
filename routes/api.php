@@ -21,7 +21,7 @@ use App\Http\Controllers\EstadoController;
 Route::post('login', [LoginController::class,'login']);
 Route::post('logout',[LoginController::class, 'logout']);
 Route::get('checarLogin', [LoginController::class, 'checarLogin']);
-
+Route::get('listarPopulacaoEConsumo/{id}', [EstadoController::class, 'listarPopulacaoEConsumo']);
 Route::resources([
     'user' => UserController::class,
     'estados' => EstadoController::class,
