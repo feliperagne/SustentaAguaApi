@@ -23,6 +23,7 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
+                "name" => "required|min:5",
                 "username" => ["required",'regex:/^\S*$/u'],
                 "email" => "required|unique:users,email|email:rfc,dns",
                 "password" => "required|min:3",
@@ -32,6 +33,8 @@ class StoreUserRequest extends FormRequest
 
     public function messages():array{
          return [
+            "name.required" => "O campo de nome é obrigatório.",
+            "name.min" => "O nome deve ter no mínimo 5 caracteres.",
             "username.required" => "O campo de nome de usuário é obrigatório.",
             'username.regex' => 'o campo de usuário não deve conter espaços!',
             "email.required" => "O campo de email é obrigatório.",

@@ -14,8 +14,8 @@ class UserController extends Controller
     {
         $user = User::create($request->all());
         
+        json_decode($user);
         $user->save();
-        
         return [
             'status' => '1',
             'data' => $user
