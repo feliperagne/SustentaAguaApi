@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EstadoController;
+use App\Http\Controllers\NoticiasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ Route::post('login', [LoginController::class,'login']);
 Route::post('logout',[LoginController::class, 'logout']);
 Route::get('checarLogin', [LoginController::class, 'checarLogin']);
 Route::get('listarPopulacaoEConsumo/{id}', [EstadoController::class, 'listarPopulacaoEConsumo']);
+Route::get('/noticias/{country}', [NoticiasController::class, 'obterPrincipaisManchetes']);
+Route::get('/noticias/{categoria}', [NoticiasController::class, 'obterNoticiasPorCategoria']);
+
 Route::resources([
     'user' => UserController::class,
     'estados' => EstadoController::class,
