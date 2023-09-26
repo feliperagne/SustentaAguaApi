@@ -9,16 +9,14 @@ use jcobhams\NewsApi\NewsApi;
 
 class NoticiasController extends Controller
 {
-    public function obterPrincipaisManchetes(Request $request, $country)
+    public function obterPrincipaisManchetesPorPais(Request $request, $country)
 {
     // Chave de API
     $apiKey = '38b9068db4764f6c97450f064ad99290';
 
-    // Construa a URL da API
     $url = "https://newsapi.org/v2/top-headlines?country={$country}&apiKey={$apiKey}";
 
-    // Faça uma solicitação GET para a API
-    $response = Http::get($url);
+    $response = Http::get($url); //fznd solicitação get pra api
 
     // Verifique se a solicitação foi bem-sucedida
     if ($response->successful()) {

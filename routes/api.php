@@ -23,9 +23,9 @@ Route::post('login', [LoginController::class,'login']);
 Route::post('logout',[LoginController::class, 'logout']);
 Route::get('checarLogin', [LoginController::class, 'checarLogin']);
 Route::get('listarPopulacaoEConsumo/{id}', [EstadoController::class, 'listarPopulacaoEConsumo']);
-Route::get('/noticias/{country}', [NoticiasController::class, 'obterPrincipaisManchetes']);
+Route::get('/noticias/{country}', [NoticiasController::class, 'obterPrincipaisManchetesPorPais']);
 Route::get('/noticias/{categoria}', [NoticiasController::class, 'obterNoticiasPorCategoria']);
-
+Route::get('getNomeUsuarioPeloUsername/{username}', [UserController::class, 'getNomeUsuarioPeloUsername']);
 Route::resources([
     'user' => UserController::class,
     'estados' => EstadoController::class,

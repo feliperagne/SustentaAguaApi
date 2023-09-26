@@ -10,7 +10,6 @@
         "intervention/image": "^2.7",
         "jcobhams/newsapi": "^1.0",
         "laravel/framework": "^10.10",
-        "laravel/passport": "^11.9",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8"
     },

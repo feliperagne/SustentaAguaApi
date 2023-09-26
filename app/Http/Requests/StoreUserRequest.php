@@ -24,7 +24,7 @@ class StoreUserRequest extends FormRequest
     {
         return [
                 "name" => "required|min:5",
-                "username" => ["required",'regex:/^\S*$/u'],
+                "username" => ["required",'regex:/^\S*$/u', 'unique:users,username'],
                 "email" => "required|unique:users,email|email:rfc,dns",
                 "password" => "required|min:3",
                //'profile_image' => 'required|image|mimes: jpg,jpeg,png|max:6144',
@@ -36,7 +36,8 @@ class StoreUserRequest extends FormRequest
             "name.required" => "O campo de nome é obrigatório.",
             "name.min" => "O nome deve ter no mínimo 5 caracteres.",
             "username.required" => "O campo de nome de usuário é obrigatório.",
-            'username.regex' => 'o campo de usuário não deve conter espaços!',
+            'username.regex' => 'O campo de usuário não deve conter espaços!',
+            'username.unique' => 'Esse nome de usuário já está sendo usado por outra pessoa!',
             "email.required" => "O campo de email é obrigatório.",
             "email.unique" => "Esse email já está sendo usado por outra pessoa.",
             "email.email" => "Por favor, informe um endereço de email válido.",

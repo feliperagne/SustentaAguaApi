@@ -21,6 +21,26 @@ class UserController extends Controller
             'data' => $user
         ];
     }
+
+    public function getNomeUsuarioPeloUsername($username){
+        $user = User::where('username', $username)->first();
+    
+        if(!$user){
+            return [
+                'status' => 'false',
+                'message' => 'Usuário não cadastrado no sistema!'
+            ];
+        }
+    
+        return [
+            'status' => 'true',
+            'data'=> [
+                'nome' => $user->name
+            ],
+        ];
+    }
+    
+    
     
 
     public function index()
