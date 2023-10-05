@@ -14,11 +14,11 @@ class NoticiasController extends Controller
     // Chave de API
     $apiKey = '38b9068db4764f6c97450f064ad99290';
 
-    $url = "https://newsapi.org/v2/top-headlines?country={$country}&apiKey={$apiKey}";
+    $url = "https://newsapi.org/v2/top-headlines?country={$country}&category=health&apiKey={$apiKey}";
 
     $response = Http::get($url); //fznd solicitação get pra api
 
-    // Verifique se a solicitação foi bem-sucedida
+    // Vendo se a solicitação foi bem-sucedida
     if ($response->successful()) {
         $manchetes = $response->json();
         return response()->json($manchetes);
